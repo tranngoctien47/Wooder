@@ -1,0 +1,97 @@
+// css button, title, icon, elements...
+.btn {
+    border: 1px solid #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: max-content;
+    margin: 0 auto;
+    padding: 15px 30px;
+    letter-spacing: 1px;
+    color: #fff;
+    @include transition($t);
+    &:hover {
+        background-color: #c0af91;
+        @include transition($t);
+    }
+    i {
+        margin-left: 10px;
+    }
+}
+.btnmore {
+    text-decoration: none;
+    font-size: 14px;
+    font-family: pb;
+    letter-spacing: 2px;
+    color: black;
+    font-weight: 700;
+    position: relative;
+    display: inline-flex;
+    &::after {
+        content: "";
+        width: 35px;
+        height: 2px;
+        background: #c0af91;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    img {
+        margin-left: 5px;
+        position: relative;
+        @include transform(translateX(0px));
+        @include transition($t);
+    }
+    &:hover {
+        img {
+            @include transform(translateX(10px));
+            @include transition($t);
+        }
+    }
+}
+.btn-video {
+    margin: 0;
+    img {
+        padding-right: 10px;
+    }
+}
+.popup-video {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    .iframe_wrap {
+        background: #000;
+        border: 5px solid #eee;
+        position: relative;
+        height: 100vw;
+        width: 100vh;
+        max-width: 600px;
+        max-height: 338px;
+    }
+    .close {
+        position: absolute;
+        right: -25px;
+        top: -25px;
+        border-radius: 100px;
+        cursor: pointer;
+        font-size: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 25px;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+.textbox {
+    padding-left: 100px;
+    padding-top: 80px;
+    .titlemain {
+        @include text(40px, pb, $lh-text, $text-cl, uppercase);
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        &::before {
+            content: "";
+            width: 80px;
+            height: 2px;
+            background: #555555;
+            display: inline-block;
+            position: relative;
+            margin-left: -80px;
+            left: -20px;
+        }
+        &.--yellow {
+            color: $yellow-cl;
+        }
+        &.--white {
+            color: $white-cl;
+        }
+    }
+    .description {
+        padding: 28px 0 28px 0;
+        color: #555555;
+        line-height: 26px;
+        &.--white {
+            color: $white-cl;
+        }
+    }
+}
+.--textright {
+    text-align: right;
+    padding-left: 0;
+    padding-right: 100px;
+    .titlemain {
+        flex-direction: row-reverse;
+        &::before {
+            margin-left: initial;
+            margin-right: -80px;
+            left: initial; //tra ve mac dinh
+            right: -20px;
+        }
+    }
+}
+.--textcenter {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    .titlemain {
+        flex-direction: column-reverse;
+        &::before {
+            width: 40px;
+            left: initial;
+            right: initial;
+            margin: 15px 0;
+            background: $yellow-cl;
+        }
+    }
+}
+@media (max-width: 992px) {
+    .textbox {
+        .titlemain {
+            font-size: 30px;
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .textbox {
+        padding-top: 80px;
+        .titlemain {
+            &::before {
+                display: none;
+            }
+        }
+    }
+    .--textright {
+        padding-right: 0;
+    }
+}
